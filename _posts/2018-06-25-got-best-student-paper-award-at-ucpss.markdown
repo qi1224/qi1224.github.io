@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Got Best Student Paper Award at UCPSS
-date:   2018-06-25 15:01:35 +0300
+date:   2018-06-25 15:01:35 +0300 
 image:  ucpss2025.jpg
 tags:   Style
 ---
