@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Got Best Student Paper Award at UCPSS
-date:   2018-06-25 15:01:35 +0300 
+title:  Got Best Student Paper Award at UCPSS 2025
+date:   2025-09-20 18:00:00 +0300 
 image:  ucpss2025.jpg
-tags:   Style
+tags:   Activity
 ---
 I recently attended the [Symposium on Ultra Clean Processing of Semiconductor Surfaces (UCPSS) 2025][ucpss-2025], where I had the opportunity to give an oral presentation on our recent work focusing on self-assembled monolayers (SAMs) deposition and the characterization of their quality. The symposium brought together leading researchers and industry experts in ultra-clean processing and surface preparation technologies, providing an excellent platform for in-depth discussions on current challenges and emerging trends in semiconductor fabrication.
 
