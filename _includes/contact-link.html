@@ -1,19 +1,9 @@
 <div class="contact">
   <ul class="contact__list list-reset">
-    
-    {%-– Check if a LinkedIn URL is defined in _data/settings.yml -%}
     {% if site.data.settings.linkedin %}
-      
       <!-- If LinkedIn exists, display the LinkedIn icon with a link -->
-      <li>
-        <a href="{{ site.data.settings.linkedin }}">
-          <i class="ion ion-logo-linkedin"></i>
-        </a>
-      </li>
-
-    {% else %}
-      <!-- If no LinkedIn URL is set, output nothing (empty else block) -->
-    {% endif %}
+      <li><a href="{{ site.data.settings.linkedin }}"><i class="ion ion-logo-linkedin"></i></a></li>
+    {% else %} {% endif %}
 
   </ul>
 </div>
