@@ -1,30 +1,16 @@
 <!-- begin comments -->
 <div class="comments">
-
-  <!-- Container where Disqus will load the comment thread -->
   <div id="disqus_thread"></div>
-
   <script>
     (function () {
-      // Create a new script element for loading Disqus
       var d = document, s = d.createElement('script');
-
-      // Load the Disqus embed script using the configured site shortname
       s.src = '//{{ site.data.settings.disqus-identifier }}.disqus.com/embed.js';
-
-      // Add a timestamp to avoid caching issues
       s.setAttribute('data-timestamp', +new Date());
-
-      // Insert the Disqus script into the document
       (d.head || d.body).appendChild(s);
     })();
   </script>
-
-  <noscript>
-    <!-- Fallback message when JavaScript is disabled -->
-    Please enable JavaScript to view the
+  <noscript>Please enable JavaScript to view the
     <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
   </noscript>
-
 </div>
 <!-- end comments -->
