@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Got Best Student Paper at UCPSS
-date:   2025-09-20
+date:   2025-09-20 18:00:00 +0100
 image:  ucpss2025.jpg
 tags:   Activity
 ---
