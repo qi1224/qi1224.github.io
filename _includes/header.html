@@ -1,51 +1,39 @@
 <div class="container">
   <div class="row">
     <div class="col col-12">
-
       <!-- begin header -->
       <header class="header">
 
-        <!-- Logo section: image if defined, otherwise site title text -->
         <div class="logo">
-          <a class="logo__link" href="{{ site.baseurl }}/">
-            {% if site.data.settings.logo %}
-              <img class="logo__image"
-                   src="{{ site.baseurl }}/images/{{ site.data.settings.logo }}"
-                   alt="{{ site.data.settings.title }}">
-            {% else %}
-              {{ site.data.settings.title }}
-            {% endif %}
+          <a class="logo__link" href="{{site.baseurl}}/">
+          {%if site.data.settings.logo %}
+            <img class="logo__image" src="{{ site.baseurl }}/images/{{ site.data.settings.logo }}" alt="{{ site.data.settings.title }}">
+          {% else %}
+            {{ site.data.settings.title }}
+          {% endif %}
           </a>
         </div>
 
-        <!-- Main navigation (usually mobile slide-out menu) -->
         <nav class="main-nav">
-          <div class="main-nav__box">
 
-            <!-- Close icon for mobile menu -->
+          <div class="main-nav__box">
             <div class="nav-icon__close">
               <i class="ion ion-ios-close-circle-outline"></i>
             </div>
 
-            <!-- Menu title -->
             <div class="nav__title">Menu</div>
 
-            <!-- Navigation links -->
             <ul class="nav__list list-reset">
-              <!-- Static "Home" link -->
               <li class="nav__item">
-                <a href="{{ site.baseurl }}/" class="nav__link">Home</a>
+                <a href="{{site.baseurl}}/" class="nav__link">Home</a>
               </li>
-
-              <!-- Loop through all site pages and generate menu items -->
               {% for page in site.pages %}
                 {% unless page.name == 'tags.html' or page.name == '404.html' %}
-                  {% if page.title %}
-                    <li class="nav__item">
-                      <a href="{{ page.url | prepend: site.baseurl }}"
-                         class="nav__link">{{ page.title }}</a>
-                    </li>
-                  {% endif %}
+              {% if page.title %}
+              <li class="nav__item">
+                <a href="{{ page.url | prepend: site.baseurl }}" class="nav__link">{{ page.title }}</a>
+              </li>
+              {% endif %}
                 {% endunless %}
               {% endfor %}
             </ul>
@@ -53,18 +41,14 @@
           </div>
         </nav>
 
-        <!-- Menu button + Search button -->
         <div class="nav-buttons">
           <i class="nav__icon nav__icon-menu ion ion-md-menu" aria-label="Menu Icon"></i>
           <i class="nav__icon nav__icon-search ion ion-md-search" aria-label="Search Icon"></i>
         </div>
 
-        <!-- Background overlay used when navigation is open -->
         <div class="header__overlay"></div>
-
       </header>
       <!-- end header -->
-
     </div>
   </div>
 </div>
