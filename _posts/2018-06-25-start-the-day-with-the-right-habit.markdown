@@ -5,8 +5,6 @@ date:   2018-06-25 15:01:35 +0300
 image:  ucpss2025.jpg
 tags:   Style
 ---
-
-
 I recently attended the [Symposium on Ultra Clean Processing of Semiconductor Surfaces (UCPSS) 2025][ucpss-2025], where I had the opportunity to give an oral presentation on our recent work focusing on self-assembled monolayers (SAMs) deposition and the characterization of their quality. The symposium brought together leading researchers and industry experts in ultra-clean processing and surface preparation technologies, providing an excellent platform for in-depth discussions on current challenges and emerging trends in semiconductor fabrication.
 
 During the meeting, I engaged with many scholars and industrial scientists, and it became clear that SAMs are attracting significant attention for their role in advanced patterning techniques, particularly in area-selective etching and deposition processes. The ability of a SAM to form a dense, well-organized monolayer makes it an attractive candidate for high-resolution masking, offering the potential to precisely define functional areas at the nanoscale. However, despite these advantages, SAMs remain a double-edged sword. Their self-assembly properties are highly sensitive to surface conditions, and achieving uniform coverage on structured or high-aspect-ratio surfaces continues to be challenging.
