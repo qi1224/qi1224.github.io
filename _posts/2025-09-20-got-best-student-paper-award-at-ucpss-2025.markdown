@@ -2,6 +2,7 @@
 layout: post
 title:  Got Best Student Paper Award at UCPSS 2025
 date:   2025-09-20 18:00:00 +0100 
+describe: Excited to share that I received the Best Student Paper Award & an inspiring experience meeting so many brilliant minds!
 image:  ucpss2025.jpg
 tags:   Activity
 ---
