@@ -1,16 +1,8 @@
-<!-- Load Google Analytics script asynchronously -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.data.settings.google-analytics }}"></script>
-
 <script>
-  /* Create the dataLayer array if it doesn't exist */
   window.dataLayer = window.dataLayer || [];
-
-  /* Define the gtag function to send data to Google Analytics */
-  function gtag(){ dataLayer.push(arguments); }
-
-  /* Initialize Google Analytics with current timestamp */
+  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  /* Configure Google Analytics using the tracking ID from settings */
   gtag('config', '{{ site.data.settings.google-analytics }}');
 </script>
