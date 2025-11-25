@@ -6,18 +6,20 @@
         <div class="hero__content">
           <h1 class="hero__title">{{ site.data.settings.author.say-hello }}</h1>
           <p class="hero__subtitle">{{ site.data.settings.author.bio }}</p>
-          <div class="hero__social">
-            <span class="hero__social-title">Find Me |</span>
-            {% include contact-link.html %}
-          </div>  
-          <div class="hero__cv-row">
-            <span class="hero__social-title">CV Download |</span>
-            <a class="cv-icon" href="{{ site.baseurl }}/assets/Qi_cv.pdf" download title="Download PDF">
-            <i class="ion ion-md-download"></i> PDF
-            </a>
-            <a class="cv-icon" href="{{ site.baseurl }}/assets/Qi_cv.docx" download title="Download DOCX">
-            <i class="ion ion-md-download"></i> DOCX
-            </a>
+          <div class="hero__social-all">
+            <span class="hero__social-title">Follow Me |</span>
+
+            <div class="hero__social-icons">
+              {% include contact-link.html %}
+            </div>
+
+            <span class="hero__cv-title">CV Download |</span>
+
+            <div class="hero__cv-links">
+              <a href="{{ site.baseurl }}/assets/cv/cv.pdf" class="cv-link">PDF</a>
+              <a href="{{ site.baseurl }}/assets/cv/cv.docx" class="cv-link">DOCX</a>
+            </div>
+            
           </div>
         </div>
       </div>
