@@ -2,7 +2,7 @@
 layout: page
 title: Interests
 permalink: /interests/
-image:  int_cover.jpg
+image: int_cover.jpg
 ---
 
 ***
