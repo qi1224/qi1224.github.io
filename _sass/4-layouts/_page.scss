@@ -19,15 +19,13 @@
 }
 
 .page__head {
-  
-  .page-image {
-    width: 100%; 
-    height: auto;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: $light-gray;
+  text-align: center; /* 居中 */
 
+  .page-image {
+    width: 80vw;       /* 宽度为窗口的 80% */
+    height: auto;      /* 高度自动，保持原比例 */
+    display: block;    /* 去掉底部空白间隙 */
+    margin: 0 auto;    /* 水平居中 */
   }
 }
 
