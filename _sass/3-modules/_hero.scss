@@ -38,6 +38,12 @@
   gap: 6px; /* 缩小 Contact 图标与前一个 | 的距离 */
 }
 
+.hero__social-title {
+  white-space: nowrap;
+  font-weight: 700; /* 加粗 */
+  margin-left: 20px; 
+}
+
 /* “CV Download |” */
 .hero__cv-title {
   white-space: nowrap;
