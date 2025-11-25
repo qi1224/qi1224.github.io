@@ -26,32 +26,29 @@
     }
 
     
-    .hero__social{
+    .hero__social-all {
       display: flex;
       align-items: center;
-      gap: 10px;
+      flex-wrap: nowrap;
+      gap: 12px; /* 控制间距 */
     }
 
-    .hero__cv-row {
-      margin-top: 10px;
-    }
-
-    .cv-icon {
-      display: inline-flex;
+    .hero__social-icons,
+    .hero__cv-links {
+      display: flex;
       align-items: center;
-      gap: 4px;
-      padding: 4px 8px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #333;
-      font-size: 14px;
-      transition: all 0.2s ease;
+      gap: 8px;
     }
 
-.cv-icon:hover {
-  background: #f0f0f0;
-}
+    .hero__social-title,
+    .hero__cv-title {
+      white-space: nowrap;  
+    }
+
+    .cv-link {
+      text-decoration: none;
+      font-weight: 600;
+    }
 
 
     .hero__social-title {
