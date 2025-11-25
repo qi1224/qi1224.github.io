@@ -29,12 +29,11 @@
       display: flex;
       align-items: center;
       flex-wrap: nowrap;
-      gap: 12px;
     }
 
     .hero__social-icons {
       display: flex;
-      align-items: center;
+      align-items: left;
       gap: 1px;
     }
     
@@ -55,7 +54,7 @@
     .hero__cv-title {
       white-space: nowrap;  /* 防止自动换行 */
       font-weight: 700;
-      margin-left: 30px;
+      margin-left: 50px;
     }
     .cv-link {
       text-decoration: none;
