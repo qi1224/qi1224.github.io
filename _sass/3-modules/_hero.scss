@@ -25,35 +25,25 @@
       letter-spacing: 0.5px;
     }
 
-    
     .hero__social-all {
       display: flex;
       align-items: center;
-      flex-wrap: nowrap; 
+      flex-wrap: nowrap;
+      gap: 12px;
     }
 
-    .hero__social-label {
-      margin-right: 6px; 
-      white-space: nowrap;
-      font-weight: 700; 
-    }
-
-    .hero__social-icons {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    
-    .hero__cv-title {
-      white-space: nowrap; 
-      font-weight: 700;
-      margin-left: 20px;
-    }   
+    .hero__social-icons,
     .hero__cv-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 8px;
     }
+    
+    .hero__social-title,
+    .hero__cv-title {
+      white-space: nowrap;  /* 防止自动换行 */
+    }
+ 
     .cv-link {
       text-decoration: none;
       font-weight: 600;
