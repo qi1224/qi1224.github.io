@@ -2,7 +2,7 @@
 layout: post
 title:  SAM Area-selective Passivation
 date:   2025-09-11 18:00:00 +0100 
-image:  
+image:  post_sam_cover.jpg
 tags:   Talk
 ---
 
@@ -11,7 +11,8 @@ tags:   Talk
 In modern semiconductor manufacturing, even the tiniest chip houses incredibly complex three-dimensional stacks composed of multiple materials. This intricate architecture, while enabling remarkable device performance, also makes precise process control increasingly challenging.
 
 ## Learning from Nature: A Forest as an Analogy
-
+![]({{ site.baseurl }}/images/post_sam_density.jpg)
+*Minimalism*
 To illustrate, imagine a simple analogy: on a lush grass field, planting a dense forest allows the canopy to intercept rain, preventing it from reaching the ground. In contrast, a barren desert with no cover becomes wet immediately. In semiconductor processing, self-assembled monolayers (SAMs) function just like that protective forest.
 
 ## Selective Protection: Growing the “Forest” Only Where Needed
