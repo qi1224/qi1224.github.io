@@ -24,47 +24,38 @@
       line-height: 32px;
       letter-spacing: 0.5px;
     }
+.hero__social-all {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px; /* 控制 Follow Me 与 Contact 部分之间的总体间距 */
+}
 
-    .hero__social-all {
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
+/* Contact 图标容器 */
+.hero__social-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 缩小 Contact 图标与前一个 | 的距离 */
+}
 
-    .hero__social-icons {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    
-    .hero__social-title {
-      white-space: nowrap;  /* 防止自动换行 */
-      font-weight: 700;
-      margin-left: 6px;
-    }
+/* “CV Download |” */
+.hero__cv-title {
+  white-space: nowrap;
+  font-weight: 700; /* 加粗 */
+  margin-left: 20px; /* 与 Contact 图标之间增加距离 */
+}
 
-        
-    .hero__cv-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    
-    .hero__cv-title {
-      white-space: nowrap;  /* 防止自动换行 */
-      font-weight: 700;
-      margin-left: 20px;
-    }
-    .cv-link {
-      text-decoration: none;
-      font-weight: 600;
-    }
+/* PDF / DOCX 链接 */
+.hero__cv-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-
-    .hero__social-title {
-      font-weight: 700;
-    }
+.cv-link {
+  text-decoration: none;
+  font-weight: 600;
+}
 
   }
 
