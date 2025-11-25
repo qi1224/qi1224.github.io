@@ -33,7 +33,7 @@
     }
 
     .hero__social-label {
-      margin-right: 0px; 
+      margin-right: 6px; 
       white-space: nowrap;
       font-weight: 700; 
     }
@@ -44,18 +44,16 @@
       gap: 6px;
     }
     
-    .hero__cv-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
     .hero__cv-title {
       white-space: nowrap; 
       font-weight: 700;
       margin-left: 20px;
+    }   
+    .hero__cv-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
-
     .cv-link {
       text-decoration: none;
       font-weight: 600;
