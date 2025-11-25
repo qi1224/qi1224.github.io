@@ -32,19 +32,31 @@
       gap: 12px;
     }
 
-    .hero__social-icons,
+    .hero__social-icons {
+      display: flex;
+      align-items: center;
+      gap: 1px;
+    }
+    
+    .hero__social-title {
+      white-space: nowrap;  /* 防止自动换行 */
+      font-weight: 700;
+      margin-left: 6px;
+    }
+
+        
     .hero__cv-links {
       display: flex;
       align-items: center;
       gap: 8px;
     }
     
-    .hero__social-title,
+    
     .hero__cv-title {
       white-space: nowrap;  /* 防止自动换行 */
-      font-weight: 700; 
+      font-weight: 700;
+      margin-left: 20px;
     }
- 
     .cv-link {
       text-decoration: none;
       font-weight: 600;
