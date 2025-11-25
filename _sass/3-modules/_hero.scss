@@ -28,40 +28,41 @@
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 10px; /* 控制 Follow Me 与 Contact 部分之间的总体间距 */
+}
+
+/* 控制 Follow Me 与后面图标之间的距离 */
+.hero__social-label {
+  margin-right: 6px; /* 调小或加大，直接控制间距 */
+  white-space: nowrap;
+  font-weight: 700; /* 与 CV Download 一致加粗 */
 }
 
 /* Contact 图标容器 */
 .hero__social-icons {
   display: flex;
   align-items: center;
-  gap: 6px; /* 缩小 Contact 图标与前一个 | 的距离 */
+  gap: 6px; /* 图标之间的间距 */
 }
 
-.hero__social-title {
-  white-space: nowrap;
-  font-weight: 700; /* 加粗 */
-  margin-left: 20px; 
-}
-
-/* “CV Download |” */
+/* CV Download */
 .hero__cv-title {
   white-space: nowrap;
-  font-weight: 700; /* 加粗 */
-  margin-left: 20px; /* 与 Contact 图标之间增加距离 */
+  font-weight: 700;
+  margin-left: 20px; /* 与 Contact 图标之间的距离 */
 }
 
 /* PDF / DOCX 链接 */
 .hero__cv-links {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 8px;
 }
 
 .cv-link {
   text-decoration: none;
   font-weight: 600;
 }
+
 
   }
 
