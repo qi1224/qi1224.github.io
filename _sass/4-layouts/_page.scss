@@ -27,13 +27,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: $light-gray;
-    &:after {
-      content: "";
-      display: table;
-      width: 100%;
-      min-height: 300px;
-      padding-top: 50%;
-    }
+
   }
 }
 
