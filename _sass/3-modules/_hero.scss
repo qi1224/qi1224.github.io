@@ -25,9 +25,34 @@
       letter-spacing: 0.5px;
     }
 
-    .hero__social {
+    .hero__social,
+    .hero__cv-row {
       display: flex;
+      align-items: center;
+      gap: 10px;
     }
+
+    .hero__cv-row {
+      margin-top: 10px;
+    }
+
+    .cv-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+
+.cv-icon:hover {
+  background: #f0f0f0;
+}
+
 
     .hero__social-title {
       font-weight: 700;
