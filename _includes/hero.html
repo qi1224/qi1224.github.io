@@ -7,21 +7,16 @@
           <h1 class="hero__title">{{ site.data.settings.author.say-hello }}</h1>
           <p class="hero__subtitle">{{ site.data.settings.author.bio }}</p>
           <div class="hero__social-all">
-              <div class="hero__social-label">
-                <span class="hero__social-title">Follow Me |</span>
-              </div>
+            <span class="hero__social-title">Follow Me |</span>
             <div class="hero__social-icons">
-              {% include contact-link.html %}
+            {% include contact-link.html %}
             </div>
-
             <span class="hero__cv-title">CV Download |</span>
-
             <div class="hero__cv-links">
               <a href="{{ site.baseurl }}/assets/cv/cv.pdf" class="cv-link">PDF</a>
               <a href="{{ site.baseurl }}/assets/cv/cv.docx" class="cv-link">DOCX</a>
             </div>
-            
-          </div>
+          </div>     
         </div>
       </div>
       <div class="col col-6 col-t-12">
