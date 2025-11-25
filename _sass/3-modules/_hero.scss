@@ -29,8 +29,13 @@
     .hero__social-all {
       display: flex;
       align-items: center;
-      flex-wrap: nowrap;
-      gap: 6px; 
+      flex-wrap: nowrap; 
+    }
+
+    .hero__social-label {
+      margin-right: 4px; 
+      white-space: nowrap;
+      font-weight: 700; 
     }
 
     .hero__social-icons {
@@ -38,6 +43,7 @@
       align-items: center;
       gap: 0px;
     }
+    
     .hero__cv-links {
       display: flex;
       align-items: center;
