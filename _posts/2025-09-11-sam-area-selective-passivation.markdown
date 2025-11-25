@@ -19,7 +19,7 @@ To illustrate, imagine a simple analogy: on a lush grass field, planting a dense
 
 By depositing SAMs only in designated regions, we can achieve area-selective passivation, shielding specific surfaces from reactions while intentionally leaving others exposed.
 
-# Molecular Design Philosophy: The Dual-Component Structure of SAMs
+## Molecular Design Philosophy: The Dual-Component Structure of SAMs
 
 The effectiveness of SAMs lies in their molecular architecture. Each molecule typically contains two major components: a functional head group and an anchoring group. The anchoring group chooses specific grafting sites on the substrate, determining exactly where the “forest” will grow.
 
