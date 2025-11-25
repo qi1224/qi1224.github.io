@@ -69,8 +69,13 @@
 
   .hero__image {
     img {
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
-    }
+        width: 80%;       // 宽度占容器 80%
+        max-width: 600px; // 可选，限制最大宽度
+        height: auto;     // 高度自动，保持比例
+        display: block;   // 去掉底部空白
+        margin: 0 auto;   // 水平居中
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15); // 原有阴影
+          }
   }
 
   @media only screen and (max-width: $desktop) {
