@@ -10,11 +10,8 @@ author:
   name: Qi Wu
   image: post_summer_school.jpg
   say-hello: Hello, I’m <strong>Qi Wu</strong>
-  bio: {
-  <small> Ph.D. candidate of KU Leuven & imec</small>
-  
-  Surface science and optical metrology researcher with expertise in surface modification, ATR-FTIR spectroscopy, and optical simulations. 4+ years of hands‑on cleanroom experience and a strong record of building experimental platforms & integrating hardware-software pipelines. Actively interested in how machine learning will be integrated into future tasks.
-  }
+  title: Ph.D. candidate of KU Leuven & IMEC
+  bio: Surface science and optical metrology researcher with expertise in surface modification, ATR-FTIR spectroscopy, and optical simulations. 4+ years of hands‑on cleanroom experience and a strong record of building experimental platforms & integrating hardware-software pipelines. Actively interested in how machine learning will be integrated into future tasks.
 
 #-------------------------------
 # Contact links
