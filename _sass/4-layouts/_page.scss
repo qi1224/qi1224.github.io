@@ -34,8 +34,13 @@
   margin-top: 0 !important;
   padding-top: 0 !important;
 
+ 
   img {
-    margin: 10px 0;
+    display: block;     /* 让 margin: auto 生效 */
+    height: 300px;      /* ← 固定高度（随你改） */
+    width: auto;        /* ← 自动宽度，保持比例 */
+    margin: 10px auto;  /* ← 上下空隙 + 水平居中 */
+    object-fit: contain;/* 保证等比例缩放，不裁切 */
   }
 
   @media only screen and (max-width: $tablet) {
