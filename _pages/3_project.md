@@ -25,5 +25,6 @@ permalink: /project/
 <small>Sep. - Dec. 2021</small>
 
 •	Performed mechanical simulations to model stress and strain in elastomer microstructure arrays used in low‑wear wafer carriers.
+
 •	Collaborated with cleanroom specialists in an industrial‑research environment.
 
