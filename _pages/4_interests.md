@@ -7,9 +7,7 @@ permalink: /interests/
 ***
 
 #### Sport
-•	Tennis, bouldering, hiking
-
-•	Half-marathon(21k) [PB: 2:00:11]
+•	Tennis, bouldering, hiking, half-marathon(21k) [PB: 2:00:11]
 
 #### DIY electronics invention
 
