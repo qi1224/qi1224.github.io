@@ -11,8 +11,7 @@ permalink: /interests/
 
 •	Half-marathon(21k) [PB: 2:00:11]
 
-![]({{ site.baseurl }}/images/interests_sports.jpg)
-
 #### DIY electronics invention
 
+![]({{ site.baseurl }}/images/interests_sports.jpg)
 
