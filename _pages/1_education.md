@@ -2,7 +2,6 @@
 layout: page
 title: Education
 permalink: /education/
-image: edu_cover.jpg
 ---
 
 ***
