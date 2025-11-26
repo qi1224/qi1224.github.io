@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Skill
-permalink: /skill/
+title: Skills
+permalink: /skills/
 ---
 ***
 #### Characterization & Metrology
