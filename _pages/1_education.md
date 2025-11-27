@@ -10,7 +10,13 @@ permalink: /education/
 <small>KU Leuven & imec, Leuven, Belgium</small>
 <small>2022 - 2026</small>
 
-Scholarship-funded research on nanopatterned surface wettability, ATR-based characterization, and semiconductor-relevant surface engineering.
+•	Scholarship-funded research on nanopatterned surface wettability, ATR-based characterization, and semiconductor-relevant surface engineering.
+
+Publications:
+
+•	Modulating Silane Monolayer Grafting on Nanopatterned Silicon: Insights from Infrared-spectroscopy-based Air-trapping Monitoring
+
+•	
 
 #### M.Sc. in Electrical Engineering
 <small>University of Twente, Enschede, the Netherlands</small>
@@ -22,6 +28,6 @@ Scholarship-funded research on nanopatterned surface wettability, ATR-based char
 
 Awards:
 
-College Outstanding Student Scholarship
+•	College Outstanding Student Scholarship
 
-ICAN Sensor Innovation Application Competition [National 3rd Prize, Provincial 1st Prize x2]
+•	ICAN Sensor Innovation Application Competition [National 3rd Prize, Provincial 1st Prize x2]
