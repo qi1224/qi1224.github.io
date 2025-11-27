@@ -19,6 +19,9 @@ Scholarship-funded research on nanopatterned surface wettability, ATR-based char
 #### B.Eng. in MEMS Engineering
 <small>Northwestern Polytechnical University, Xi’an, China</small>
 <small>2015 - 2019</small>
+
 Awards:
+
 College Outstanding Student Scholarship
+
 ICAN Sensor Innovation Application Competition [National 3rd Prize, Provincial 1st Prize x2]
