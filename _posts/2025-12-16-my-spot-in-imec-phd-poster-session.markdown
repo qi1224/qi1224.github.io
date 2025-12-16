@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  My spot in imec PhD poster session
-date:   2025-12-16 18:00:00 +0100 
+date:   2025-12-15 18:00:00 +0100 
 image:  post_mida_poster.jpg
 tags:   Activity
 ---
