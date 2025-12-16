@@ -2,7 +2,7 @@
 layout: post
 title:  My spot in imec PhD poster session
 date:   2025-12-16 18:00:00 +0100 
-image:  post_ucpss2025.jpg
+image:  post_mida_poster.jpg
 tags:   Activity
 ---
 Had a fantastic time connecting with 35+ PhD students from imec MIDA & UPM groups! 🚀 truly inspiring to exchange progress and future outlooks with such a talented crowd.
