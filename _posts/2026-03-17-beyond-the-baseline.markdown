@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Beyond the Baseline: The Necessity of Real-Time Spectral Analysis in In-Situ Testing
-date:   2026-03-17 18:00:00 +0100 
+date:   2026-03-16 18:00:00 +0100 
 image:  atr_data.png
 tags:   Talk
 ---
