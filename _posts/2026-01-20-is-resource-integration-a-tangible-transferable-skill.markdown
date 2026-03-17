@@ -5,14 +5,19 @@ date:   2026-01-20 18:00:00 +0100
 image:  resource_integration.png
 tags:   Talk
 ---
-"I'm good at integrating accessible resources." This was my answer during a discussion, only to be challenged: "Is that really a tangible skill? Even a celebrity agent does that."
+"I think I’m just someone who tries to connect the dots with whatever is within reach." This was my tentative answer during a recent discussion. (ps:Yes, I'm quoting a phrase that Steve Jobs liked)
+But the response I received was a fair challenge: "Is that really a tangible skill? It sounds a bit like what any manager or agent does."
 
-Through the journey of my PhD research, I have come to realize that "resource integration" is not just a vague term. It is a critical, high-level competency that I take immense pride in. Modern scientific research is undeniably interdisciplinary. On the surface, my project sits at the intersection of Interface Physics, Semiconductor Surface Modification, and Optical Simulation. But the devil is in the details.
+This got me thinking. After years in the lab, I’ve realized that what I once dismissed as "just getting by" might actually be a cornerstone of modern research.
 
-Solving real-world problems often requires building new testing platforms from scratch: using 3D modeling and printing for prototyping, or leveraging programming for automated spectral and image analysis. Admittedly, these individual skills are "general" and have a low barrier to entry for the first step. However, I strongly disagree with the equation: General = Low Value.
+My doctoral project sits at the intersection of Interface Physics, Semiconductor Surface Modification, and Optical Simulation. On paper, these are distinct fields. In practice, they are a series of puzzles that no single manual can solve. Often, the path forward required me to step out of my comfort zone, learning 3D modeling to prototype a small part, or picking up basic programming to automate a tedious spectral analysis.
 
-Along the way, I have seen many colleagues "stop." When they encounter a bottleneck outside their immediate expertise, they halt their investigation or wait for someone else to fix it. They say: "The parts we purchased can only do this much; there’s nothing I can do." This choice might seem to save time and improve "task-completion" efficiency in the short term.
+None of these skills make me an expert in mechanical/electrical engineering or computer science. In fact, many of these "general" tools are quite accessible to anyone willing to try. For a long time, I even felt a bit of "imposter syndrome" because I wasn't a specialist in any one of them. I always heard and (consequently) worried that "general" meant "low value."
 
-But in reality, there are always accessible resources waiting to be "integrated." This suggests that behind the ability to integrate resources lies a deeper foundation: the ability to Analyze Latent Needs and Discover Hidden Resources.
+However, I’ve noticed a recurring pattern. In the face of a technical bottleneck, the easiest (and often most logical) choice is to stop. It’s easy to say: "The equipment we bought has reached its limit, and that’s beyond my expertise." It feels like an efficient way to manage one’s time.
 
-So, do you believe resource integration is a tangible transferable skill? To me, it is the bridge between a "stalled" project and a "breakthrough" discovery.
+But I've found that there is often a "hidden bridge" made of accessible resources, a simple script, a 3D-printed fix, or an AI-assisted tool... that can turn a dead-end into a breakthrough.
+
+Perhaps "Resource Integration" isn't a flashy, singular talent. To me, it feels more like a willingness to look closer: a combination of analyzing a latent need and the patience to discover a hidden resource. It’s about not stopping when the manual ends.
+
+So, is it a tangible, transferable skill? I’m still learning, but I’ve come to believe it is. It might not be as visible as a specialized degree, but it’s the quiet force that keeps a project moving when the standard tools fail.
