@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Beyond the Baseline: The Necessity of Real-Time Spectral Analysis in In-Situ Testing
-date: 2026-03-16 18:00:00 +0100 
+date: 2026-03-16 18:00:00 +0100
 image: atr_data.png
 tags: Talk
 ---
-Excited to share my milestone & an inspiring experience meeting so many brilliant minds!
-
 ##  "Real-time" testing is not real
 In my doctoral research, I utilize Attenuated Total Reflection (ATR) spectroscopy for in-situ testing of surface physical transformation processes. For a long time, our workflow followed a traditional pattern: real-time acquisition followed by batch post-analysis. However, this "analyze later" approach created a black box-when anomalies appeared in the data weeks later, it was nearly impossible to reconstruct what had actually happened on the lab bench. This not only hindered troubleshooting but also wasted immense time and resources.
 ## Be an ostrich
