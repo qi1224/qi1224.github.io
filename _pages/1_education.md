@@ -16,7 +16,9 @@ Publications:
 
 •	Modulating Silane Monolayer Grafting on Nanopatterned Silicon: Insights from Infrared-spectroscopy-based Air-trapping Monitoring
 
-•	
+Awards:
+
+•	Best Student Paper of UCPSS 2025 Conference
 
 #### M.Sc. in Electrical Engineering
 <small>University of Twente, Enschede, the Netherlands</small>
