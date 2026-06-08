@@ -5,8 +5,8 @@ date:   2026-01-20 18:00:00 +0100
 image:  resource_integration.png
 tags:   Talk
 ---
-"I think I’m just someone who tries to connect the dots with whatever is within reach." This was my tentative answer during a recent discussion. (ps:Yes, I'm quoting a phrase that Steve Jobs liked)
-But the response I received was a fair challenge: "Is that really a tangible skill? It sounds a bit like what any manager or agent does."
+"I think I’m just someone who tries to connect the dots with whatever is within reach." This was my tentative answer during a recent discussion. (ps: Yes, I'm quoting a phrase that Steve Jobs liked)
+But the response I received was a fair challenge: "Is that really a tangible skill? It sounds a bit like a pop-star's manager does."
 
 This got me thinking. After years in the lab, I’ve realized that what I once dismissed as "just getting by" might actually be a cornerstone of modern research.
 
