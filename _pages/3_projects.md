@@ -20,6 +20,8 @@ permalink: /projects/
 
 •	Conducted wettability studies on high‑aspect‑ratio patterns, correlating surface geometry with wetting transitions and anisotropic wetting behavior.
 
+<p><a class="project-demo-button" href="{{ '/atr-ir-demo/' | relative_url }}" target="_blank" rel="noopener noreferrer">Explore Interactive ATR-IR Demo ↗</a></p>
+
 #### Internship
 <small>Advanced Research Center for Nanolithography (ARCNL), Amsterdam, the Netherlands</small>
 <small>Sep. - Dec. 2021</small>

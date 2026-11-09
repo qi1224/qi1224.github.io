@@ -48,6 +48,32 @@
   }
 }
 
+.page__content .project-demo-button {
+  display: inline-block;
+  max-width: 100%;
+  padding: 16px 24px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 25px;
+  border-radius: 30px;
+  color: $dark;
+  background: $light-gray;
+  transition: $global-transition;
+
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    background: $dark;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $brand-color;
+    outline-offset: 3px;
+  }
+}
+
 .page-box {
   text-align: center;
 
