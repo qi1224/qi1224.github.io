@@ -18,12 +18,13 @@ const server=http.createServer((req,res)=>{
 });
 (async()=>{
   await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const url=process.argv.includes('--live') ? 'https://qi1224.github.io/atr-ir-demo/' : `http://127.0.0.1:${server.address().port}/`;
   const browser=await chromium.launch({channel:'msedge',headless:true});
   try{
     for(const size of [{width:1440,height:900},{width:1024,height:768},{width:1180,height:660},{width:390,height:844}]){
       const page=await browser.newPage({viewport:size});
       const errors=[];page.on('pageerror',e=>errors.push(e.message));
-      await page.goto(`http://127.0.0.1:${server.address().port}/`);
+      await page.goto(url);
       assert.equal(await page.locator('input[type=range]').count(),4);
       assert(await page.locator('#orientation').isDisabled());
       const old=await page.locator('#spectrum-line').getAttribute('d');
@@ -49,9 +50,14 @@ const server=http.createServer((req,res)=>{
         return a.every((v,i)=>Math.abs(v-b[i])<1e-7);
       }),'Planar reference independent of parameters');
       const before=await page.evaluate(()=>{const p=currentParams(),s=buildSpectrum(p.fs,p.H,p.air);return [calcWPR(s),peakStretch(s)];});
+      await page.evaluate(()=>{Math.random=()=>0;});
       await page.locator('#alternative').click();
+      await page.waitForFunction(()=>!document.getElementById('alternative').disabled);
       const status=await page.locator('#alt-status').textContent();
-      assert(status.length);
+      assert(status.startsWith('Matched'),status);
+      assert.notEqual(await page.locator('#orientation').inputValue(),'90','Search can select a different orientation');
+      const angles=await page.evaluate(async()=>[...new Set((await TrenchOrientation.alternatives()).map(c=>c[5]))]);
+      assert.deepEqual(angles,Array.from({length:19},(_,i)=>5*i));
       if(status.startsWith('Matched')){
         const after=await page.evaluate(()=>{const p=currentParams(),s=buildSpectrum(p.fs,p.H,p.air);return [calcWPR(s),peakStretch(s)];});
         assert(Math.abs(before[0]-after[0])<=.015001);
@@ -62,7 +68,9 @@ const server=http.createServer((req,res)=>{
       await page.locator('#orientation-enabled').uncheck();
       assert.equal(await page.locator('#spectrum-line').getAttribute('d'),old);
       assert(await page.locator('#orientation').isDisabled());
+      const retainedAngle=await page.locator('#orientation').inputValue();
       await page.locator('#alternative').click();
+      assert.equal(await page.locator('#orientation').inputValue(),retainedAngle,'Disabled mode leaves orientation unchanged');
       assert((await page.locator('#alt-status').textContent()).length);
       const layout=await page.evaluate(()=>{
         const controls=document.querySelector('.controls-inner'),a=document.getElementById('alternative');
@@ -74,9 +82,23 @@ const server=http.createServer((req,res)=>{
       if(size.width===1440) await page.screenshot({path:'C:/Users/wu78/atr-orientation-preview.png',fullPage:true});
       await page.close();
     }
+    const cancellation=await browser.newPage();
+    await cancellation.goto(url);
+    await cancellation.locator('#orientation-enabled').check();
+    await cancellation.waitForFunction(()=>!document.getElementById('orientation').disabled);
+    await cancellation.evaluate(()=>{
+      document.getElementById('alternative').click();
+      document.getElementById('orientation').value=37;
+      document.getElementById('orientation').dispatchEvent(new Event('input'));
+    });
+    await cancellation.waitForFunction(()=>!document.getElementById('alternative').disabled);
+    assert.equal(await cancellation.locator('#orientation').inputValue(),'37');
+    assert.equal(await cancellation.locator('#air').inputValue(),'40');
+    assert.equal(await cancellation.locator('#alt-status').textContent(),'');
+    await cancellation.close();
     const page=await browser.newPage();
     await page.route('**/orientation.f32.gz',route=>route.abort());
-    await page.goto(`http://127.0.0.1:${server.address().port}/`);
+    await page.goto(url);
     const old=await page.locator('#spectrum-line').getAttribute('d');
     await page.locator('#orientation-enabled').check();
     await page.waitForFunction(()=>document.getElementById('alt-status').textContent.startsWith('Could not'));

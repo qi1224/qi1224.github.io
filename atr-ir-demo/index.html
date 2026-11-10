@@ -209,8 +209,12 @@ function peakStretch(values){
   return peak;
 }
 
-function showAlternative(){
+async function showAlternative(){
   const p=currentParams();
+  const startingAngle=+$('orientation').value;
+  const startingMode=orientationActive;
+  const searchState=()=>JSON.stringify([currentParams(),orientationActive,+$('orientation').value,modeRequest]);
+  const startingState=searchState();
   const currentSpectrum=buildSpectrum(p.fs,p.H,p.air);
   const targetWPR=calcWPR(currentSpectrum);
   const targetPeak=peakStretch(currentSpectrum);
@@ -218,9 +222,13 @@ function showAlternative(){
   // baseline-corrected maximum of the OH-stretch band (3200–3850 cm⁻¹).
   const MAX_WPR_DELTA=0.015;
   const MAX_PEAK_REL_DELTA=0.025; // 2.5% of current OH-stretch peak
-  const candidates=orientationActive ? TrenchOrientation.alternatives(+$('orientation').value) : ALTERNATIVES;
-  const eligible=candidates.filter(([fs,H,air,wpr,peak])=>{
-    const different=(Math.abs(fs-p.fs)>=0.05 || Math.abs(H-p.H)>=50 || Math.abs(air-p.air)>=10);
+  $('alternative').disabled=true;
+  if(startingMode) $('alt-status').textContent='Searching across all four parameters…';
+  try{
+  const candidates=startingMode ? await TrenchOrientation.alternatives() : ALTERNATIVES;
+  if(searchState()!==startingState) return;
+  const eligible=candidates.filter(([fs,H,air,wpr,peak,angle])=>{
+    const different=(Math.abs(fs-p.fs)>=0.05 || Math.abs(H-p.H)>=50 || Math.abs(air-p.air)>=10 || (startingMode && Math.abs(angle-startingAngle)>=5));
     if(!different) return false;
     return Math.abs(wpr-targetWPR)<=MAX_WPR_DELTA &&
       Math.abs(peak-targetPeak)<=Math.max(1e-6,targetPeak*MAX_PEAK_REL_DELTA);
@@ -232,17 +240,24 @@ function showAlternative(){
   // Prefer visually meaningful parameter differences; randomize among up to
   // 80 strong candidates, avoiding near-identical examples.
   eligible.sort((a,b)=>{
-    const distance=c=>Math.abs(c[0]-p.fs)/0.65+Math.abs(c[1]-p.H)/800+Math.abs(c[2]-p.air)/100;
+    const distance=c=>Math.abs(c[0]-p.fs)/0.65+Math.abs(c[1]-p.H)/800+Math.abs(c[2]-p.air)/100+(startingMode ? Math.abs(c[5]-startingAngle)/90 : 0);
     return distance(b)-distance(a);
   });
   const choice=eligible[Math.floor(Math.random()*Math.min(80,eligible.length))];
-  const [fs,H,air,wpr,peak]=choice;
+  const [fs,H,air,wpr,peak,angle]=choice;
   $('air').value=air;
   $('fs').value=Number(fs).toFixed(2);
   $('height').value=H;
+  if(startingMode) $('orientation').value=angle;
   render(false);
   const relativePeak=100*Math.abs(peak-targetPeak)/Math.max(targetPeak,1e-6);
   $('alt-status').textContent=`Matched WPR ${targetWPR.toFixed(2)} → ${wpr.toFixed(2)}; OH-stretch peak Δ ${relativePeak.toFixed(1)}%.`;
+  if(startingMode) $('alt-status').textContent+=` Orientation ${startingAngle}° → ${angle}°.`;
+  }catch(error){
+    if(searchState()===startingState) $('alt-status').textContent='Could not complete the alternative search. Please try again.';
+  }finally{
+    $('alternative').disabled=false;
+  }
 }
 
 const ticks=$('x-ticks');
@@ -284,7 +299,7 @@ $('orientation-enabled').addEventListener('change',async()=>{
 });
 const orientationHelp=document.createElement('p');
 document.querySelector('.modal p').prepend('With Trench orientation turned off: ');
-orientationHelp.textContent='Enable Trench orientation to use the supplied RCWA trench dataset. The azimuth runs from 0° (across the trenches) to 90° (along the trenches). Baseline-corrected spectra are interpolated across solid fraction, height, air-trapping ratio and orientation using all supplied grid points. These orientation-dependent optical responses help explain changes in the water absorption bands. WPR is recalculated from the displayed spectrum; alternative states keep the selected orientation. The cross-section remains a schematic of geometry and wetting.';
+orientationHelp.textContent='Enable Trench orientation to use the supplied RCWA trench dataset. The azimuth runs from 0° (across the trenches) to 90° (along the trenches). Baseline-corrected spectra are interpolated across solid fraction, height, air-trapping ratio and orientation using all supplied grid points. These orientation-dependent optical responses help explain changes in the water absorption bands. WPR is recalculated from the displayed spectrum. Alternative states can change all four parameters, searching orientations from 0° to 90° in 5° steps while retaining the same WPR and OH-stretch intensity tolerances. The cross-section remains a schematic of geometry and wetting.';
 $('close-modal').before(orientationHelp);
 $('help').addEventListener('click',()=>$('modal').classList.add('open'));
 $('close-modal').addEventListener('click',()=>$('modal').classList.remove('open'));

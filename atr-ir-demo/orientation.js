@@ -2,7 +2,7 @@
 // Corr sheets exported by convert_orientation.py; no raw absorbance is used.
 const TrenchOrientation = (() => {
   const wavenumbers = Array.from({length:322}, (_,i)=>1432+8*i);
-  let data, pending, cachedAngle, cachedAlternatives;
+  let data, pending, cachedAlternatives;
   async function load(){
     if(data) return;
     if(!pending) pending=(async()=>{
@@ -31,9 +31,19 @@ const TrenchOrientation = (() => {
   }
   // Preserve the original 1% air / 50 nm / 0.05 solid fraction search grid.
   // Interpolate spectra first, then take peaks (never interpolate WPR ratios).
-  function alternatives(angle){
-    if(cachedAngle===angle) return cachedAlternatives;
+  function alternatives(){
+    if(!cachedAlternatives) cachedAlternatives=buildAlternatives().catch(error=>{
+      cachedAlternatives=null;
+      throw error;
+    });
+    return cachedAlternatives;
+  }
+  async function buildAlternatives(){
     const result=[];
+    // Search every supplied orientation, yielding between angles so controls
+    // remain responsive while the reusable four-variable grid is prepared.
+    for(let angle=0;angle<=90;angle+=5){
+    await new Promise(resolve=>setTimeout(resolve,0));
     for(let f=1;f<=14;f++) for(let h=0;h<=800;h+=50){
       const endpoints=Array.from({length:6},(_,r)=>spectrum(f*.05,h,r*20,angle));
       for(let air=0;air<=100;air++){
@@ -46,10 +56,10 @@ const TrenchOrientation = (() => {
             if(wn>=3200) stretch=Math.max(stretch,v); else bend=Math.max(bend,v);
           }
         }
-        result.push([Number((f*.05).toFixed(2)),h,air,bend===0?0:stretch/bend,stretch]);
+        result.push([Number((f*.05).toFixed(2)),h,air,bend===0?0:stretch/bend,stretch,angle]);
       }
     }
-    cachedAngle=angle;cachedAlternatives=result;
+    }
     return result;
   }
   return {load,spectrum,alternatives,wavenumbers};
