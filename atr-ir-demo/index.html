@@ -35,6 +35,19 @@ main{display:grid;grid-template-columns:minmax(270px,27%) minmax(0,1fr);gap:14px
 .orientation-control.is-disabled output{background:#f0f2f5;border-color:#d8dde4}
 .slider:disabled{background:#d5dae2;cursor:default;opacity:.65}
 @media(max-width:600px){.orientation-control{grid-column:1/-1}.orientation-control .control-top{display:flex}.orientation-control output{width:auto;margin:0}.orientation-control .ends{font-size:11px}.alt-status{display:block;flex-basis:100%}}
+.wetting-switch{display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:3px;border:1px solid #cad9ed;border-radius:12px;background:#edf3fc;min-width:0;flex:1}
+.wetting-switch button{border:0;border-radius:9px;background:transparent;color:#546a88;padding:6px 4px;font:inherit;font-size:clamp(11px,1vw,14px);font-weight:650;line-height:1.15;cursor:pointer}
+.wetting-switch button[aria-pressed="true"]{background:#fff;color:#1052a8;box-shadow:0 1px 5px #244d8924}
+.wetting-switch button:focus-visible{outline:3px solid #83b4fc;outline-offset:2px}
+.wetting-control .control-top output{min-width:76px}
+.action:disabled{opacity:.55;cursor:default}
+.wpr-formula{padding:10px 12px 0;text-align:center;color:var(--dark);font-size:clamp(25px,2.2vw,34px);font-weight:740;letter-spacing:-1px;line-height:1.15}
+@media(max-width:900px),(max-height:760px) and (min-width:601px){.wpr-formula{font-size:25px}}
+.figure-area{align-items:center;justify-content:center;overflow:hidden}
+.spectrum-group{display:flex;flex-direction:column;align-items:center;flex:none;min-width:0}
+.spectrum-group .wpr-formula{width:100%;padding:0 4px 6px}
+.spectrum-group .chart-svg{width:100%;min-height:0;flex:none}
+@media(max-width:600px){.wetting-control{grid-column:1/-1}.wetting-control .control-top{display:flex}.wetting-control .control-top output{width:auto;margin:0}.wetting-switch button{font-size:12px}}
 </style>
 </head>
 <body>
@@ -43,9 +56,9 @@ main{display:grid;grid-template-columns:minmax(270px,27%) minmax(0,1fr);gap:14px
 <section class="panel controls" aria-label="Parameters">
 <div class="panel-title"><span class="title-icon">⚙</span> Parameters</div>
 <div class="controls-inner">
-<div class="cross-card" aria-label="Schematic cross section, blue is water, white is air, gray is silicon"><svg id="cross" viewBox="0 0 310 130" role="img" aria-label="Cross-section of nanostructured silicon with water above and trapped air in gaps"><defs><clipPath id="cross-bound"><rect x="5" y="7" width="300" height="116" rx="5"/></clipPath></defs><g clip-path="url(#cross-bound)"><rect x="5" y="7" width="300" height="116" fill="#c2e8ff"/><g id="solid-pattern"></g><g id="air-pockets"></g></g></svg></div>
+<div class="cross-card" aria-label="Schematic wetting cross section"><svg id="cross" viewBox="0 0 310 130" role="img" aria-label="Cross-section of nanostructured silicon and wetting area"><defs><clipPath id="cross-bound"><rect id="cross-clip-rect" x="5" y="7" width="300" height="116" rx="5"/></clipPath><clipPath id="area-circle-clip"><circle cx="245" cy="65" r="50"/></clipPath></defs><g clip-path="url(#cross-bound)"><g id="structure-scene"><rect x="5" y="7" width="300" height="116" fill="#c2e8ff"/><g id="solid-pattern"></g><g id="air-pockets"></g></g></g><g id="area-circle" style="display:none"><circle cx="245" cy="65" r="50" fill="#c2e8ff"/><circle id="area-full" cx="245" cy="65" r="50" fill="#1767d4" style="display:none"/><g id="area-patches" clip-path="url(#area-circle-clip)"></g><circle cx="245" cy="65" r="50" fill="none" stroke="#8dbde8" stroke-width="1.5"/></g></svg></div>
 <div class="control-stack">
-<div class="control"><div class="control-top"><label for="air">Air trapping <span class="hint" title="0%: complete wetting; 100%: air trapped">ⓘ</span></label><output id="air-value">40%</output></div><input class="slider" id="air" type="range" min="0" max="100" value="40" step="1"><div class="ends"><span>Complete wetting<br>(0%)</span><span>Air trapped<br>(100%)</span></div></div>
+<div class="control wetting-control"><div class="control-top"><div class="wetting-switch" role="group" aria-label="Wetting parameter"><button id="filling-mode" type="button" aria-pressed="true">Filling depth</button><button id="area-mode" type="button" aria-pressed="false">Wetting area ratio</button></div><output id="air-value" for="air">60%</output></div><input class="slider" id="air" type="range" min="0" max="100" value="60" step="1" aria-label="Filling depth"><div class="ends"><span id="wetting-min">0% (air trapped)</span><span id="wetting-max">100% (complete wetting)</span></div></div>
 <div class="control"><div class="control-top"><label for="fs">Solid fraction <i>f</i><sub>s</sub></label><output id="fs-value">0.20</output></div><input class="slider" id="fs" type="range" min="0.05" max="0.70" value="0.20" step="0.01"></div>
 <div class="control"><div class="control-top"><label for="height">Structure height <i>H</i></label><output id="height-value">400 nm</output></div><input class="slider" id="height" type="range" min="0" max="800" value="400" step="10"></div>
 <div class="control orientation-control is-disabled" id="orientation-control"><div class="control-top"><label class="orientation-toggle" for="orientation-enabled"><input type="checkbox" id="orientation-enabled">Trench orientation</label><output id="orientation-value" for="orientation">0°</output></div><input class="slider" id="orientation" aria-label="Trench orientation" type="range" min="0" max="90" value="0" step="1" disabled><div class="ends"><span>Perpendicular (0°)</span><span>Parallel (90°)</span></div></div>
@@ -53,7 +66,7 @@ main{display:grid;grid-template-columns:minmax(270px,27%) minmax(0,1fr);gap:14px
 <div class="bottom"><div class="wpr">WPR = <strong id="wpr-value">—</strong></div><button id="alternative" class="action">⤨ &nbsp;Same WPR? Show alternative</button><div id="alt-status" class="alt-status" role="status" aria-live="polite"></div></div>
 </div></section>
 <section class="panel demo" aria-label="ATR-IR spectrum"><div class="panel-title"><span class="title-icon">∿</span> ATR-IR Spectrum <span class="small">(baseline corrected)</span></div>
-<div class="figure-area"><svg id="spectrum" class="chart-svg" viewBox="0 0 1000 675" preserveAspectRatio="xMidYMid meet" aria-label="ATR-IR spectrum chart" role="img">
+<div class="figure-area"><div class="spectrum-group"><div class="wpr-formula">WPR=Peak-max (OH stretch) / Peak-max (OH bend)</div><svg id="spectrum" class="chart-svg" viewBox="0 90 1000 585" preserveAspectRatio="xMidYMin meet" aria-label="ATR-IR spectrum chart" role="img">
 <defs><clipPath id="chart-clip"><rect x="95" y="110" width="855" height="480" /></clipPath></defs>
 <rect id="stretch-band" x="144.33" y="165" width="328.85" height="425" rx="12" fill="#fff0f1"/><rect id="bend-band" x="818.08" y="165" width="98.65" height="425" rx="12" fill="#edf0ff"/>
 <g clip-path="url(#chart-clip)"><path id="spectrum-line" d="" fill="none" stroke="#e2232b" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/></g>
@@ -63,7 +76,7 @@ main{display:grid;grid-template-columns:minmax(270px,27%) minmax(0,1fr);gap:14px
 <text id="stretch-label" x="308.75" y="155" class="band-label" text-anchor="middle" fill="#d21e36">OH stretch</text><text id="bend-label" x="867" y="155" class="band-label" text-anchor="middle" fill="#263ac2">OH bend</text>
 </svg>
 
-</div><div class="footer-note">Loaded from provided Excel dataset · Current state = endpoint interpolation between complete wetting and air trapped spectra</div></section>
+</div></div></section>
 </main>
 <div class="overlay" id="modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-head"><h2 id="modal-head">About the interactive model</h2><p>This offline HTML prototype is now connected to your provided dataset. For each solid fraction and structure height, the displayed spectrum is built from the <b>baseline-corrected endpoint spectra</b>: complete wetting (air trapping 0%) and fully air-trapped (100%). The intermediate state is generated by <b>linear interpolation between these two endpoint spectra</b>, following your requested presentation logic.</p><p><b>WPR</b> is recalculated from the displayed interpolated spectrum as: maximum absorbance in 3200–3850 cm⁻¹ divided by maximum absorbance in 1500–1800 cm⁻¹. The chart y-axis is fixed from -0.05 to 0.25.</p><p>The <b>Same WPR? Show alternative</b> button searches a precomputed grid for a distinct geometry/wetting state matching both WPR (within 0.015) and baseline-corrected OH-stretch peak intensity (within 2.5%). If no such combination is available, it reports that instead of returning a misleading match.</p><button id="close-modal">Close</button></div></div>
 <script src="orientation.js"></script>
@@ -75,6 +88,10 @@ const $=id=>document.getElementById(id);
 const sliders=[$('air'),$('fs'),$('height'),$('orientation')];
 let WN=DATA.wavenumbers;
 let orientationActive=false;
+let wettingMode='filling';
+let wettingModeRequest=0;
+const wettingValues={filling:60,area:60};
+let alternativeSearching=false;
 const FS=DATA.fsValues;
 const HS=DATA.hValues;
 const Y_MIN=-0.05, Y_MAX=0.25;
@@ -114,13 +131,19 @@ function interpolateEndpoint(grid, fsVal, hVal){
   return out;
 }
 
-function buildSpectrum(fsVal,hVal,airPct){
-  if(orientationActive) return TrenchOrientation.spectrum(fsVal,hVal,airPct,+$('orientation').value);
+function buildSpectrum(fsVal,hVal,airPct,angle=+$('orientation').value){
+  if(orientationActive) return TrenchOrientation.spectrum(fsVal,hVal,airPct,angle);
   const wet=interpolateEndpoint(DATA.wet,fsVal,hVal);
   const air=interpolateEndpoint(DATA.air,fsVal,hVal);
   const t=airPct/100;
   const values=new Array(WN.length);
   for(let i=0;i<WN.length;i++) values[i]=wet[i]*(1-t)+air[i]*t;
+  return values;
+}
+
+function mixEndpointSpectra(wet,air,wetFraction){
+  const values=new Array(wet.length);
+  for(let i=0;i<wet.length;i++) values[i]=wet[i]*wetFraction+air[i]*(1-wetFraction);
   return values;
 }
 
@@ -179,9 +202,54 @@ function drawCross({air,fs,H}){
       }
     }
   }
+  const areaMode=wettingMode==='area';
+  $('cross-clip-rect').setAttribute('width',areaMode?'175':'300');
+  $('structure-scene').setAttribute('transform',areaMode?'translate(-80 0)':'');
+  $('area-circle').style.display=areaMode?'':'none';
+  $('cross').setAttribute('aria-label',areaMode?'Fully wetted structure on the left; dark blue in the circle shows the fully wetted area fraction':'Cross-section of nanostructured silicon with water and trapped air');
+  if(areaMode) drawAreaCircle(+$('air').value);
 }
 
-function currentParams(){ return {air:+$('air').value, fs:+$('fs').value, H:+$('height').value}; }
+const areaCells=(()=>{
+  let seed=24681357;
+  const random=()=>{seed=(1664525*seed+1013904223)>>>0;return seed/4294967296;};
+  const centers=Array.from({length:7},()=>({x:202+random()*86,y:22+random()*86}));
+  const cells=[];
+  for(let y=15;y<115;y+=10) for(let x=195;x<295;x+=10){
+    let weight=0;
+    for(let sy=0;sy<10;sy++) for(let sx=0;sx<10;sx++){
+      const dx=x+sx+.5-245,dy=y+sy+.5-65;
+      if(dx*dx+dy*dy<=2500) weight++;
+    }
+    if(!weight) continue;
+    const cx=x+5,cy=y+5;
+    const score=Math.min(...centers.map(c=>(cx-c.x)**2+(cy-c.y)**2))+random()*130;
+    cells.push({x,y,weight,score});
+  }
+  return cells.sort((a,b)=>a.score-b.score);
+})();
+const areaCellTotal=areaCells.reduce((sum,cell)=>sum+cell.weight,0);
+function drawAreaCircle(percent){
+  const patches=$('area-patches');
+  patches.replaceChildren();
+  $('area-full').style.display=percent===100?'':'none';
+  if(percent===0 || percent===100) return;
+  let remaining=areaCellTotal*percent/100;
+  const svgNS='http://www.w3.org/2000/svg';
+  for(const cell of areaCells){
+    if(remaining<=0) break;
+    const rect=document.createElementNS(svgNS,'rect');
+    rect.setAttribute('x',String(cell.x));
+    rect.setAttribute('y',String(cell.y));
+    rect.setAttribute('width',String(10*Math.min(1,remaining/cell.weight)));
+    rect.setAttribute('height','10');
+    rect.setAttribute('fill','#1767d4');
+    patches.appendChild(rect);
+    remaining-=cell.weight;
+  }
+}
+
+function currentParams(){ return {air:100-(+$('air').value), fs:+$('fs').value, H:+$('height').value}; }
 
 function setSliderFill(sl){
   const pct=(+sl.value-(+sl.min))/(+sl.max-(+sl.min))*100;
@@ -190,16 +258,24 @@ function setSliderFill(sl){
 
 function render(clearMessage=true){
   const p=currentParams();
-  $('air-value').textContent=`${p.air}%`;
+  $('air-value').textContent=`${$('air').value}%`;
   $('fs-value').textContent=p.fs.toFixed(2);
   $('height-value').textContent=`${p.H} nm`;
   $('orientation-value').textContent=`${$('orientation').value}°`;
   sliders.forEach(setSliderFill);
-  const values=buildSpectrum(p.fs,p.H,p.air);
-  const wpr=calcWPR(values);
+  const x=(+$('air').value)/100;
+  let values,wpr;
+  if(wettingMode==='area'){
+    const wet=buildSpectrum(p.fs,p.H,0),air=buildSpectrum(p.fs,p.H,100);
+    values=mixEndpointSpectra(wet,air,x);
+    wpr=x*calcWPR(wet)+(1-x)*calcWPR(air);
+  }else{
+    values=buildSpectrum(p.fs,p.H,p.air);
+    wpr=calcWPR(values);
+  }
   $('wpr-value').textContent=wpr.toFixed(1);
   drawSpectrum(values);
-  drawCross(p);
+  drawCross({...p,air:wettingMode==='area'?0:p.air});
   if(clearMessage) $('alt-status').textContent='';
 }
 
@@ -209,30 +285,67 @@ function peakStretch(values){
   return peak;
 }
 
+function peakStretchMix(wet,air,wetFraction){
+  let peak=-Infinity;
+  for(const i of strIdx) peak=Math.max(peak,wet[i]*wetFraction+air[i]*(1-wetFraction));
+  return peak;
+}
+
 async function showAlternative(){
+  if(alternativeSearching) return;
   const p=currentParams();
   const startingAngle=+$('orientation').value;
   const startingMode=orientationActive;
-  const searchState=()=>JSON.stringify([currentParams(),orientationActive,+$('orientation').value,modeRequest]);
+  const startingWettingMode=wettingMode;
+  const searchState=()=>JSON.stringify([currentParams(),orientationActive,+$('orientation').value,wettingModeRequest,modeRequest]);
   const startingState=searchState();
-  const currentSpectrum=buildSpectrum(p.fs,p.H,p.air);
-  const targetWPR=calcWPR(currentSpectrum);
+  const x=(100-p.air)/100;
+  const currentWet=startingWettingMode==='area'?buildSpectrum(p.fs,p.H,0):null;
+  const currentAir=startingWettingMode==='area'?buildSpectrum(p.fs,p.H,100):null;
+  const currentSpectrum=startingWettingMode==='area'?mixEndpointSpectra(currentWet,currentAir,x):buildSpectrum(p.fs,p.H,p.air);
+  const targetWPR=startingWettingMode==='area'
+    ? x*calcWPR(currentWet)+(1-x)*calcWPR(currentAir)
+    : calcWPR(currentSpectrum);
   const targetPeak=peakStretch(currentSpectrum);
   // Both criteria must be satisfied. Peak strength is checked against the
   // baseline-corrected maximum of the OH-stretch band (3200–3850 cm⁻¹).
   const MAX_WPR_DELTA=0.015;
   const MAX_PEAK_REL_DELTA=0.025; // 2.5% of current OH-stretch peak
+  alternativeSearching=true;
   $('alternative').disabled=true;
-  if(startingMode) $('alt-status').textContent='Searching across all four parameters…';
+  $('alt-status').textContent='Searching for an alternative…';
   try{
   const candidates=startingMode ? await TrenchOrientation.alternatives() : ALTERNATIVES;
   if(searchState()!==startingState) return;
-  const eligible=candidates.filter(([fs,H,air,wpr,peak,angle])=>{
+  const endpointByGeometry=new Map();
+  const geometryKey=(fs,H,angle)=>`${fs}|${H}|${angle||0}`;
+  if(startingWettingMode==='area') for(const [fs,H,air,wpr,,angle] of candidates){
+    if(air!==0 && air!==100) continue;
+    const key=geometryKey(fs,H,angle);
+    if(!endpointByGeometry.has(key)) endpointByGeometry.set(key,{});
+    endpointByGeometry.get(key)[air===0?'wetWpr':'airWpr']=wpr;
+  }
+  const eligible=[];
+  for(const [fs,H,air,storedWpr,storedPeak,angle] of candidates){
     const different=(Math.abs(fs-p.fs)>=0.05 || Math.abs(H-p.H)>=50 || Math.abs(air-p.air)>=10 || (startingMode && Math.abs(angle-startingAngle)>=5));
-    if(!different) return false;
-    return Math.abs(wpr-targetWPR)<=MAX_WPR_DELTA &&
-      Math.abs(peak-targetPeak)<=Math.max(1e-6,targetPeak*MAX_PEAK_REL_DELTA);
-  });
+    if(!different) continue;
+    let wpr=storedWpr,peak=storedPeak;
+    if(startingWettingMode==='area'){
+      const endpoint=endpointByGeometry.get(geometryKey(fs,H,angle));
+      if(!endpoint) continue;
+      const wetFraction=(100-air)/100;
+      wpr=wetFraction*endpoint.wetWpr+(1-wetFraction)*endpoint.airWpr;
+      if(Math.abs(wpr-targetWPR)>MAX_WPR_DELTA) continue;
+      if(!endpoint.wetSpectrum){
+        endpoint.wetSpectrum=buildSpectrum(fs,H,0,angle);
+        endpoint.airSpectrum=buildSpectrum(fs,H,100,angle);
+      }
+      peak=peakStretchMix(endpoint.wetSpectrum,endpoint.airSpectrum,wetFraction);
+    }
+    if(Math.abs(wpr-targetWPR)<=MAX_WPR_DELTA &&
+      Math.abs(peak-targetPeak)<=Math.max(1e-6,targetPeak*MAX_PEAK_REL_DELTA))
+      eligible.push([fs,H,air,wpr,peak,angle]);
+  }
   if(!eligible.length){
     $('alt-status').textContent='No alternative matches both WPR (±0.015) and OH-stretch intensity (±2.5%).';
     return;
@@ -245,7 +358,7 @@ async function showAlternative(){
   });
   const choice=eligible[Math.floor(Math.random()*Math.min(80,eligible.length))];
   const [fs,H,air,wpr,peak,angle]=choice;
-  $('air').value=air;
+  $('air').value=100-air;
   $('fs').value=Number(fs).toFixed(2);
   $('height').value=H;
   if(startingMode) $('orientation').value=angle;
@@ -256,6 +369,7 @@ async function showAlternative(){
   }catch(error){
     if(searchState()===startingState) $('alt-status').textContent='Could not complete the alternative search. Please try again.';
   }finally{
+    alternativeSearching=false;
     $('alternative').disabled=false;
   }
 }
@@ -272,8 +386,23 @@ for(const wn of [4000,3600,3200,2800,2400,2000,1650,1400]){
 
 sliders.forEach(sl=>{ setSliderFill(sl); sl.addEventListener('input',()=>render()); });
 $('alternative').addEventListener('click',showAlternative);
-const datasetNote=document.querySelector('.footer-note');
-const originalNote=datasetNote.textContent;
+function setWettingMode(mode){
+  if(mode===wettingMode) return;
+  wettingModeRequest++;
+  wettingValues[wettingMode]=+$('air').value;
+  wettingMode=mode;
+  const filling=mode==='filling';
+  $('air').value=wettingValues[mode];
+  $('air').setAttribute('aria-label',filling?'Filling depth':'Wetting area ratio');
+  $('filling-mode').setAttribute('aria-pressed',String(filling));
+  $('area-mode').setAttribute('aria-pressed',String(!filling));
+  $('wetting-min').textContent=filling?'0% (air trapped)':'0% wetted area';
+  $('wetting-max').textContent=filling?'100% (complete wetting)':'100% wetted area';
+  $('alternative').disabled=alternativeSearching;
+  render();
+}
+$('filling-mode').addEventListener('click',()=>setWettingMode('filling'));
+$('area-mode').addEventListener('click',()=>setWettingMode('area'));
 let modeRequest=0;
 $('orientation-enabled').addEventListener('change',async()=>{
   const request=++modeRequest;
@@ -284,7 +413,7 @@ $('orientation-enabled').addEventListener('change',async()=>{
     catch(error){
       if(request!==modeRequest) return;
       $('orientation-enabled').checked=false;
-      $('alt-status').textContent='Could not load orientation data. Original dataset remains active; please try again.';
+      $('alt-status').textContent='Could not load orientation data. Keep orientation-local.js with this HTML file and try again.';
       return;
     }
   }
@@ -294,19 +423,48 @@ $('orientation-enabled').addEventListener('change',async()=>{
   updateBandIndices();
   $('orientation').disabled=!enabled;
   $('orientation-control').classList.toggle('is-disabled',!enabled);
-  datasetNote.textContent=enabled ? 'RCWA trench dataset · Interpolation across orientation, solid fraction, height and air trapping' : originalNote;
   render();
 });
 const orientationHelp=document.createElement('p');
 document.querySelector('.modal p').prepend('With Trench orientation turned off: ');
-orientationHelp.textContent='Enable Trench orientation to use the supplied RCWA trench dataset. The azimuth runs from 0° (across the trenches) to 90° (along the trenches). Baseline-corrected spectra are interpolated across solid fraction, height, air-trapping ratio and orientation using all supplied grid points. These orientation-dependent optical responses help explain changes in the water absorption bands. WPR is recalculated from the displayed spectrum. Alternative states can change all four parameters, searching orientations from 0° to 90° in 5° steps while retaining the same WPR and OH-stretch intensity tolerances. The cross-section remains a schematic of geometry and wetting.';
+orientationHelp.textContent='Enable Trench orientation to use the supplied RCWA trench dataset. The azimuth runs from 0° (across the trenches) to 90° (along the trenches). Baseline-corrected spectra are interpolated across solid fraction, height, air-trapping ratio and orientation using all supplied grid points. In Filling depth mode, WPR is recalculated from the displayed spectrum. In Wetting area ratio mode, the spectrum and WPR are each weighted averages of the fully wetted and fully air-trapped endpoints. The alternative-state search uses the active mode’s WPR definition and the displayed spectrum’s OH-stretch peak. The cross-section and circular wetting map are schematics.';
+document.querySelectorAll('.modal p')[1].append(' In Wetting area ratio mode, WPR is the weighted average of the two endpoint WPR values.');
 $('close-modal').before(orientationHelp);
+const localHelp=document.createElement('p');
+localHelp.textContent='When opening this HTML file directly, Trench orientation loads automatically from orientation-local.js in the same folder. The data stays in your browser.';
+$('close-modal').before(localHelp);
 $('help').addEventListener('click',()=>$('modal').classList.add('open'));
 $('close-modal').addEventListener('click',()=>$('modal').classList.remove('open'));
 $('modal').addEventListener('click',e=>{ if(e.target===$('modal')) $('modal').classList.remove('open'); });
 window.addEventListener('keydown',e=>{ if(e.key==='Escape') $('modal').classList.remove('open'); });
+function fitSpectrum(){
+  const area=document.querySelector('.figure-area');
+  const group=document.querySelector('.spectrum-group');
+  const formula=group.querySelector('.wpr-formula');
+  const svg=$('spectrum');
+  const style=getComputedStyle(area);
+  const maxWidth=area.clientWidth-parseFloat(style.paddingLeft)-parseFloat(style.paddingRight);
+  const maxHeight=area.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);
+  if(maxWidth<=0 || maxHeight<=0) return;
+  let width=maxWidth;
+  for(let i=0;i<8;i++){
+    group.style.width=`${width}px`;
+    const formulaHeight=formula.getBoundingClientRect().height;
+    const fittedWidth=Math.max(1,(maxHeight-1.5*formulaHeight)*1000/585);
+    if(width<=fittedWidth+.5) break;
+    width=Math.min(width,fittedWidth);
+  }
+  group.style.width=`${width}px`;
+  const formulaHeight=formula.getBoundingClientRect().height;
+  svg.style.height=`${width*585/1000}px`;
+  group.style.transform=`translateY(-${formulaHeight/2}px)`;
+}
+window.addEventListener('resize',fitSpectrum);
+if(window.ResizeObserver) new ResizeObserver(fitSpectrum).observe(document.querySelector('.figure-area'));
+if(document.fonts) document.fonts.ready.then(fitSpectrum);
 updateBands();
 render();
+fitSpectrum();
 </script>
 </body>
 </html>

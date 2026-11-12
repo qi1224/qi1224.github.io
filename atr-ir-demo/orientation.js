@@ -2,15 +2,39 @@
 // Corr sheets exported by convert_orientation.py; no raw absorbance is used.
 const TrenchOrientation = (() => {
   const wavenumbers = Array.from({length:322}, (_,i)=>1432+8*i);
-  let data, pending, cachedAlternatives;
+  let data, pending, cachedAlternatives, localBlob;
+  async function loadLocalBlob(){
+    if(localBlob) return localBlob;
+    await new Promise((resolve,reject)=>{
+      const script=document.createElement('script');
+      script.src='orientation-local.js';
+      script.onload=()=>{script.remove();resolve();};
+      script.onerror=()=>{script.remove();reject(new Error('Local orientation data script unavailable'));};
+      document.head.appendChild(script);
+    });
+    const encoded=window.ORIENTATION_GZIP_BASE64;
+    if(typeof encoded!=='string') throw new Error('Invalid local orientation data script');
+    const binary=atob(encoded), bytes=new Uint8Array(binary.length);
+    for(let i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+    window.ORIENTATION_GZIP_BASE64=null;
+    localBlob=new Blob([bytes]);
+    return localBlob;
+  }
   async function load(){
     if(data) return;
     if(!pending) pending=(async()=>{
-      const response=await fetch('orientation.f32.gz');
-      if(!response.ok) throw new Error('Orientation dataset unavailable');
-      const buffer=await new Response(response.body.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+      let compressedStream;
+      if(location.protocol==='file:'){
+        compressedStream=(await loadLocalBlob()).stream();
+      }else{
+        const response=await fetch('orientation.f32.gz');
+        if(!response.ok) throw new Error('Orientation dataset unavailable');
+        compressedStream=response.body;
+      }
+      const buffer=await new Response(compressedStream.pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
       if(buffer.byteLength!==14*19*17*6*322*4) throw new Error('Invalid orientation dataset');
       data=new Float32Array(buffer);
+      localBlob=null;
     })().catch(error=>{pending=null;throw error;});
     return pending;
   }
