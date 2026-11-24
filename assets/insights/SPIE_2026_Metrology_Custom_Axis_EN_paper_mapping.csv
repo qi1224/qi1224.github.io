@@ -1,0 +1,73 @@
+SPIE CID,Paper Title,Technique,Focus,Conference Topic,Original Tag,Evidence
+139810A,In-line XPS for advanced semiconductor manufacturing and metrology on fully integrated targets,XPS,Equipment & Throughput,先进逻辑器件,化学 / 材料表征,摘要已核实
+139810F,Poisson-CDF modeling of in-die optimization for electron beam inspection under random defect distribution,CD-SEM,Computational Metrology,建模与数据分析,SEM / e-beam,仅标题：未验证实验结论
+139810I,Characterization and prediction of overlay signatures in WxW bonding processes for backside power distribution networks (BS-PDN),OVL,Computational Metrology,异质集成与先进封装,Overlay / EPE,仅标题：未验证实验结论
+139810J,Inline monitoring of hybrid bonding Cu recess with vertical traveling scatterometry machine learning,OCD,AI/ML,异质集成与先进封装,光学 / OCD,摘要已核实
+139810K,Advanced overlay metrology for wafer-to-wafer hybrid bonding in 3D integration (Karel Urbánek Best Student Paper Award),OVL,Multi-technique Integration,异质集成与先进封装,Overlay / EPE,摘要已核实
+139810L,Bonding-induced overlay fingerprint modeling using Zernike polynomials,OVL,Computational Metrology,异质集成与先进封装,Overlay / EPE,仅标题：未验证实验结论
+139810Q,Self-supervised brightness and contrast correction for multibeam SEM defect inspection,CD-SEM,AI/ML,人工智能与机器学习,SEM / e-beam,仅标题：未验证实验结论
+139810R,Rapid adaptation of SEM image denoising model using conditional normalization,CD-SEM,Computational Metrology,人工智能与机器学习,SEM / e-beam,仅标题：未验证实验结论
+139810T,Twenty heads are better than one: scalable microAFM for high-throughput metrology and inspection,AFM,Equipment & Throughput,新型量测方法,AFM / 扫描探针,摘要已核实
+139810V,Photocathode SEM with pixel current modulation for improved imaging of charge-sensitive materials and structures,CD-SEM,Equipment & Throughput,新型量测方法,SEM / e-beam,仅标题：未验证实验结论
+139810Y,High-precision inline metrology of Si photonics devices on 300mm wafers using CD-SEM,CD-SEM,Advanced Devices & Packaging Applications,新型量测方法,SEM / e-beam,仅标题：未验证实验结论
+1398114,In-line XPS metrology for area-selective deposition processes on patterned structures,XPS,Advanced Devices & Packaging Applications,X射线量测与检查,化学 / 材料表征,摘要已核实
+139811A,Optical overlay metrology challenges in next-gen semiconductor nodes,OVL,Advanced Devices & Packaging Applications,套刻与对准,Overlay / EPE,摘要已核实
+139811B,Novel scanner corrections for co-optimizing imaging and overlay to enable critical EUV and DUV lithography after wafer-to-wafer bonding,OVL,Equipment & Throughput,套刻与对准,X-ray / EUV,仅标题：未验证实验结论
+139811C,Edge placement error-aware through-stack overlay optimization for a FLASH multilayer product stack,OVL,Algorithms,套刻与对准,Overlay / EPE,仅标题：未验证实验结论
+139811D,Enhancing overlay accuracy in advanced DRAM: process-compatible targets and for improved NZO stability,OVL,Advanced Devices & Packaging Applications,套刻与对准,Overlay / EPE,仅标题：未验证实验结论
+139811E,A novel MTD control method for oblique intersecting layers in DRAM products,OVL,Algorithms,先进存储器件,工艺集成 / 其他,仅标题：未验证实验结论
+139811I,On device ADI overlay measurement in advanced DRAM nodes using high kV CFE technology,OVL,Advanced Devices & Packaging Applications,先进存储器件,Overlay / EPE,摘要已核实
+139811J,Gate leakage evaluation of GAA transistors using SEMs,CD-SEM,Algorithms,电子束量测,SEM / e-beam,仅标题：未验证实验结论
+139811L,eBeam process control for yield and reliability in advanced HBM hybrid bonding,CD-SEM,Multi-technique Integration,电子束量测,SEM / e-beam,仅标题：未验证实验结论
+139811M,Quantification of SAQP process variation by using a combined e-beam framework,CD-SEM,Multi-technique Integration,电子束量测,SEM / e-beam,仅标题：未验证实验结论
+139811N,LER analysis of noisy SEM images using physics-inspired deep learning,CD-SEM,AI/ML,电子束量测,SEM / e-beam,仅标题：未验证实验结论
+139811O,Improving EUV low landing energy process monitoring through striation and triangularity: novel CD-SEM metrics,CD-SEM,Algorithms,电子束量测,SEM / e-beam,仅标题：未验证实验结论
+139811P,Optimization of optical metrology simulation domains in solving inverse problems of machine learning based OCD metrology (Invited Paper),OCD,AI/ML,光学量测,光学 / OCD,摘要已核实
+139811Q,Beyond overlay: additional parameters extracted from overlay metrology measurements,OVL,Algorithms,光学量测,Overlay / EPE,摘要已核实
+139811T,High landing energy e-beam inspection as an in-line blocked nanowire release metric for GAA yield ramp,CD-SEM,Advanced Devices & Packaging Applications,缺陷检查,SEM / e-beam,摘要已核实
+139811U,Electrical defect review and characterization via in-line conductive AFM in advanced logic processes,AFM,Advanced Devices & Packaging Applications,缺陷检查,AFM / 扫描探针,仅标题：未验证实验结论
+1398121,BSE grey level-based CD-SEM metrology for scumming quantification in high-NA EUV contact holes,CD-SEM,Algorithms,缺陷检查,SEM / e-beam,仅标题：未验证实验结论
+1398126,High-resolution 3D NAND profile measurement using optical metrology and machine learning,OCD,AI/ML,海报论文（跨技术领域）,光学 / OCD,仅标题：未验证实验结论
+1398127,Fast and diverse SEM image synthesis: leveraging parameter-specific prior distributions in a variational autoencoder,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+1398128,Detection of inference errors in deep learning denoising models and reliability analysis system for SEM metrology,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139812B,Large vision model for layout guided SEM image contour extraction,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139812D,Pushing the limits of spectroscopic reflectometry for film metrology,OCD,Equipment & Throughput,海报论文（跨技术领域）,光学 / OCD,仅标题：未验证实验结论
+139812H,Cu pad metrology using four-directional BSE signal of SEM for hybrid bonding applications,CD-SEM,Multi-technique Integration,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+139812J,Improved conduction model in charging SEM simulation,CD-SEM,Computational Metrology,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+139812M,SEM overlay target optimization and metrology recipe validation via DL simulations,OVL,Computational Metrology,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139812S,PFIB-SEM wafer DualBeam applications for ground truth in-fab 3D NAND metrology,CD-SEM,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139812Z,LaB6 virtual source mode electron guns for advancing brightness and resolution in electron beam inspection,CD-SEM,Equipment & Throughput,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+1398130,Analysis of factors affecting pattern fidelity evaluation using sine wave patterns in electron multibeam mask writing,CD-SEM,Algorithms,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+1398133,A robust AEI sampling strategy to address boundary-induced overlay variability,OVL,Algorithms,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+1398135,Advancements and challenges in large-scale atomic force microscopy image stitching for semiconductor devices,AFM,Equipment & Throughput,海报论文（跨技术领域）,AFM / 扫描探针,仅标题：未验证实验结论
+1398136,Including prior design intent information to enhance contour extraction robustness for CD-SEM metrology,CD-SEM,Algorithms,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+1398138,GRACE: a gradient-based model-agnostic explainability framework for photolithography overlay virtual metrology,OVL,AI/ML,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813D,Charge suppression in SEM imaging using pulsed electron beam modulation from an NEA-InGaN semiconductor photocathode,CD-SEM,Equipment & Throughput,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139813G,"High-resolution, high-contrast FIB-SEM 3D tomography for process control in advanced logic manufacturing",CD-SEM,Algorithms,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139813I,In-situ metrology for high aspect ratio channel holes via optimized diagonal milling and one-shot SEM imaging,CD-SEM,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139813K,Error correction methodology in semiconductor devices utilizing large-area overlay measurement via DBM,OVL,Algorithms,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813L,Overlay metrology performance specification challenge entering the sub-nanometer overlay era,OVL,Computational Metrology,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813M,Domain knowledge-driven fusion machine learning for overlay prediction enhancement,OVL,AI/ML,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813P,Comprehensive post-CMP surface metrology using large-area atomic force microscopy with optical-level throughput,AFM,Equipment & Throughput,海报论文（跨技术领域）,AFM / 扫描探针,仅标题：未验证实验结论
+139813Q,Application of low landing energy e-beam metrology for evaluating ArF immersion photoresist: Insights from EUV PR methodologies,CD-SEM,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139813R,Occlusion-aware pattern measurement for see-through BSE images of HV-SEM via contour- and pixel-based approaches,CD-SEM,Algorithms,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+139813T,NZO improvement on DRAM by novel recipe optimization algorithm,OVL,Algorithms,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813U,Leveraging principal component analysis for overlay variation and root cause discovery in high-volume manufacturing,OVL,Algorithms,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139813Z,A systematic tuning methodology for on-product overlay control in advanced 3D NAND nodes,OVL,Algorithms,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+1398140,Resist- and underlayer-specific sensitivity of unbiased LER to CD-SEM measurement conditions,CD-SEM,Algorithms,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+1398142,High-throughput AFM roughness metrology with sub-1% repeatability for wafer-scale process control,AFM,Equipment & Throughput,海报论文（跨技术领域）,AFM / 扫描探针,摘要已核实
+1398143,MSAD: efficient multiscale attention decoder for semiconductor image segmentation,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+1398144,Atomic force probing and focus-exposure matrix analysis of 20nm contact holes on EUV-patterned wafers,AFM,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,AFM / 扫描探针,仅标题：未验证实验结论
+1398145,"Impact of mark polarity, crosstalk, and recovery topography on AIMid overlay metrology",OVL,AI/ML,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+1398148,Computational guided dynamic sampling e-beam inspection in high-volume manufacturing (HVM) automation with ASML’s virtual computing platform (VCP),CD-SEM,Equipment & Throughput,海报论文（跨技术领域）,SEM / e-beam,摘要已核实
+1398149,Bridging simulation and reality: few-shot fine-tuning for SEM profile prediction,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814A,AI-driven metrology for electrical test via ellipsometry,OCD,AI/ML,海报论文（跨技术领域）,光学 / OCD,仅标题：未验证实验结论
+139814B,High-NA EUV patterning of logic feature 20-24nm: an e-beam defectivity analysis,CD-SEM,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814G,Diffusion models for defect detection in SEM images of contact hole patterns,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814H,Reconstruction of 3D line/space pattern morphologies from top-down SEM images,CD-SEM,Computational Metrology,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814I,A novel deep learning framework for CD-SEM image denoising,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814J,Quartz resonator-based atomic force microscopy as a stable semiconductor metrology solution,AFM,Equipment & Throughput,海报论文（跨技术领域）,AFM / 扫描探针,仅标题：未验证实验结论
+139814L,3-pitch cDBO: a novel overlay mark with process robustness for advanced logic devices,OVL,Advanced Devices & Packaging Applications,海报论文（跨技术领域）,Overlay / EPE,仅标题：未验证实验结论
+139814M,Adaptive design of EUV scatterometry through efficient Bayesian inference,OCD,Computational Metrology,海报论文（跨技术领域）,X-ray / EUV,仅标题：未验证实验结论
+139814N,LLM-powered fab operation assistant for CD-SEM recipe creation,CD-SEM,AI/ML,海报论文（跨技术领域）,SEM / e-beam,仅标题：未验证实验结论
+139814O,On product scanner focus monitoring and control in leading edge logic foundry with spectroscopic ellipsometry,OCD,Equipment & Throughput,海报论文（跨技术领域）,光学 / OCD,仅标题：未验证实验结论
