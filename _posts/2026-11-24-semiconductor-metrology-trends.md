@@ -52,6 +52,12 @@ Two selected papers concern XPS. As device performance increasingly depends on c
 
 *Figure 2. AI/ML-related publications across six conference editions, covering all metrology and inspection technologies.*
 
+<style>
+.post__content table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+.post__content th, .post__content td { padding: 0.45em 0.3em; text-align: right; }
+.post__content th:first-child, .post__content td:first-child { text-align: left; }
+</style>
+
 | Year | Total papers | AI/ML papers | Share |
 | --- | ---: | ---: | ---: |
 | 2021 | 86 | 12 | 14.0% |
